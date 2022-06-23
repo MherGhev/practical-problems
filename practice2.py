@@ -28,8 +28,8 @@ def ex2(number):
 def ex3(number):
     return sum(ex2(number)) == number
 
-print(ex3(28))
-print(ex3(29))
+# print(ex3(28))
+# print(ex3(29))
 
 def my_zip(data1, data2):
     if not len(data1) == len(data2):
@@ -123,3 +123,17 @@ def ex8(my_list):
 # print(ex8([4,3,2,1]))
 # print(ex8([1,2,3,4]))
 # print(ex8([1,2,3,2,1]))
+
+def is_sublist(longer, shorter):
+    list1 = []
+    for i in range(len(longer) - len(shorter)+1):
+        list2 = []
+        for j in range(len(shorter)):
+            list2.append(longer[i+j])
+        list1.append(list2)
+    return shorter in list1
+
+
+long_list = [1, 2, 3, 4, 5]
+short_list = [1, 2, 3]
+print(is_sublist(long_list, short_list))
