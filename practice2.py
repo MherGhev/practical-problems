@@ -130,10 +130,11 @@ def is_sublist(longer, shorter):
         list2 = []
         for j in range(len(shorter)):
             list2.append(longer[i+j])
-        list1.append(list2)
-    return shorter in list1
+        if shorter == list2:
+            return True
+    return False     
 
 
 long_list = [1, 2, 3, 4, 5]
-short_list = [1, 2, 3]
+short_list = [1, 3]
 print(is_sublist(long_list, short_list))
